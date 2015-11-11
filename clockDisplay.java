@@ -49,4 +49,22 @@ public class clockDisplay
             horas = 0;
         }
     }
+    
+    /**
+     * Metodo que devuelve la hora y los minutos separados por dos puntos
+     * Siempre con formato "hh:mm" de 5 dígitos
+     */
+    public String getTime()
+    {
+        if (horas < 10 & minutos < 10){
+            return "0" + horas + ":" + "0" + minutos;
+        }
+        else if (horas < 10){
+            return "0" + horas + ":" + minutos;
+        }
+        else if (minutos < 10){
+            return horas + ":" + "0" + minutos;
+        }
+        return horas + ":" + minutos;
+    }
 }
