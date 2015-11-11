@@ -33,4 +33,20 @@ public class clockDisplay
             System.out.println("La hora introducida no es válida");
         }
     }
+    
+    /**
+     * Metodo que permite avanzar un minuto.
+     */
+    public void timeTick()
+    {
+        horas = horas;
+        minutos = minutos + 1;
+        if (minutos == 60){
+            horas = horas + 1;
+            minutos = 0;
+        }
+        if (horas == 24){
+            horas = 0;
+        }
+    }
 }
