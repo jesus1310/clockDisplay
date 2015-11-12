@@ -56,15 +56,18 @@ public class clockDisplay
      */
     public String getTime()
     {
-        if (horas < 10 & minutos < 10){
-            return "0" + horas + ":" + "0" + minutos;
+        String time = horas + ":" + minutos;
+        if (time.length() == 3){
+            time = "0" + horas + ":" + "0" + minutos;
         }
-        else if (horas < 10){
-            return "0" + horas + ":" + minutos;
-        }
-        else if (minutos < 10){
-            return horas + ":" + "0" + minutos;
-        }
-        return horas + ":" + minutos;
+        else if (time.length() == 4){
+            if (horas < 10){
+                time = "0" + horas + ":" + minutos;
+            }
+            else{
+                time = horas + ":" + "0" + minutos;
+            }
+        }    
+        return time;
     }
 }
